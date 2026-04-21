@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    active: dev
+
+
+weather_api_key: 56ebe89be1af481d8c490921262603
+

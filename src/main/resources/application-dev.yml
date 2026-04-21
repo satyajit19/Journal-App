@@ -1,0 +1,49 @@
+spring:
+
+  application:
+    name: demo
+
+  data:
+    redis:
+      host: redis-18258.c264.ap-south-1-1.ec2.cloud.redislabs.com
+      username: default
+      #     host: redis://default:tBDpQ4U4e0eLDVHwph3SLOTyuxuiTiFq@redis-18258.c264.ap-south-1-1.ec2.cloud.redislabs.com:18258
+      port: 18258
+      password: tBDpQ4U4e0eLDVHwph3SLOTyuxuiTiFq
+    mongodb:
+      uri: mongodb+srv://sataru003_db_user:BGC6DcLmnbxGyZL2@cluster0.rssflb5.mongodb.net/?appName=Cluster0
+      database: journal
+      auto-index-creation: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: satyajit.sarvatra@gmail.com
+    password: taod oisj wjve dfor
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+    consumer:
+      group-id: test-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.Test.demo.model
+
+
+server:
+  port: 8080
